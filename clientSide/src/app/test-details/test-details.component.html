@@ -1,0 +1,41 @@
+<div class="container">
+        
+        
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>
+                        Ranking
+                    </th>
+                    <th>
+                        Distance (meter)
+                    </th>
+                    <th>
+                        Fitness Ranking
+                    </th>
+                    <th>
+        
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <div *ngIf="!TestDetails">
+                    <h4>No Test Details is present Click Add new to add Data.</h4>
+                </div>
+                <tr *ngFor = "let td of TestDetails" >
+                    <td>{{td.athleteName}}</td>
+                    <td>{{td.distance}}</td>
+                    <td>{{td.myProperty}}</td>
+                    <td><a routerLink="testDetails/{{td.athleteId}}" >Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+        <a class="btn btn-primary" routerLink="/addAthlete/{{Id}}">ADD NEW ATHLETE </a>
+        </div>
+        <br>
+        <div>
+        <a class="btn btn-primary" routerLink="/delete/{{Id}}">DELETE TEST </a>
+        </div>
+</div>
+        

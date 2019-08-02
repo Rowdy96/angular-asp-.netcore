@@ -1,0 +1,36 @@
+
+
+<div class="container">
+<a class="btn btn-primary" routerLink="/create">Create New Test</a>
+
+<table class="table table-borderless">
+    <thead>
+        <tr>
+            <th>
+                Test Date
+            </th>
+            <th>
+                Number Of participant
+            </th>
+            <th>
+                Test Type
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <div *ngIf="!TestList">
+            <h4>No Test Data is present Click Add new to add Data.</h4>
+        </div>
+        <tr *ngFor = "let test of TestList" (click)="onClick(test.testId)">
+            <td>{{test.date}}</td>
+            <td>{{test.numOfParticipants}}</td>
+            <td>{{test.testType}}</td>
+            <td><a routerLink =  "alltestDetails/{{test.testId}}">Edit</a></td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
